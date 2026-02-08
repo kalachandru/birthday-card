@@ -1,0 +1,710 @@
+/* ========================================
+   CSS Variables & Design Tokens
+   ======================================== */
+:root {
+    /* Colors - Soft Pastel Palette */
+    --color-bg: #fff0f5;
+    --color-rose: #ff69b4;
+    --color-gold: #ffd700;
+    --color-text: #4a4a4a;
+    --color-overlay: rgba(0, 0, 0, 0.7);
+
+    /* Gradients */
+    --gradient-1: linear-gradient(135deg, #fff0f5 0%, #e6e6fa 100%);
+    --gradient-2: linear-gradient(135deg, #e6e6fa 0%, #fff0f5 100%);
+    --gradient-3: linear-gradient(135deg, #fff5e6 0%, #fff0f5 100%);
+    --gradient-4: #1a1a2e;
+    /* Night Theme for Page 4 */
+
+    /* Typography */
+    --font-handwritten: 'Dancing Script', cursive;
+    --font-display: 'Pacifico', cursive;
+    --font-body: 'Poppins', sans-serif;
+
+    /* Spacing */
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+
+    /* Shadows */
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+    /* Transitions */
+    --trans-speed: 0.6s;
+}
+
+/* ========================================
+   Global Reset & Container
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--gradient-1);
+    color: var(--color-text);
+    overflow: hidden;
+    /* Prevent default scrolling */
+    height: 100vh;
+    width: 100vw;
+}
+
+/* ========================================
+   2. Card Container (The 3D Space)
+   ======================================== */
+.card-container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    perspective: 1500px;
+    /* Essential for 3D effect */
+}
+
+/* ========================================
+   3. Card Pages (The Physical Layers)
+   ======================================== */
+.card-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: var(--spacing-md);
+    background: var(--gradient-1);
+    /* Default background, overridden by specific pages */
+
+    /* 3D Properties */
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    /* Default State */
+    transform: rotateY(0deg);
+    z-index: 10;
+    /* Starting z-index */
+}
+
+.card-page.flipped {
+    transform: rotateY(-180deg);
+}
+
+/* Page Specific Z-Indices (Important for stacking) */
+.page-1 {
+    z-index: 5;
+}
+
+.page-2 {
+    z-index: 4;
+}
+
+.page-3 {
+    z-index: 3;
+}
+
+.page-4 {
+    z-index: 2;
+    background: #1a1a2e;
+    /* Dark for fireworks */
+    color: #fff;
+}
+
+/* Obsolete classes from previous design, keeping safe removal */
+.card-page.prev {
+    /* No longer needed with new 3D effect */
+}
+
+/* ========================================
+   Page 1: The Greeting
+   ======================================== */
+.page-1 {
+    background: var(--gradient-1);
+}
+
+.greeting-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6rem);
+    text-align: center;
+    line-height: 1.2;
+    color: #333;
+    margin-bottom: var(--spacing-md);
+    animation: fadeIn 1.5s ease;
+}
+
+.highlight-name {
+    font-family: var(--font-handwritten);
+    color: var(--color-rose);
+    display: block;
+    font-size: 1.2em;
+    margin-top: 10px;
+    background: linear-gradient(45deg, #ff69b4, #dda0dd);
+    background-clip: text;
+    /* Standard property */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.greeting-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0;
+    animation: fadeIn 1.5s ease 0.5s forwards;
+}
+
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.float-item {
+    position: absolute;
+    font-size: 3rem;
+    opacity: 0.5;
+    animation: floatAround 15s infinite linear;
+}
+
+.float-item:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.float-item:nth-child(2) {
+    top: 60%;
+    right: 15%;
+    animation-delay: -5s;
+}
+
+.float-item:nth-child(3) {
+    top: 15%;
+    right: 20%;
+    animation-delay: -10s;
+}
+
+@keyframes floatAround {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(30px, -50px) rotate(10deg);
+    }
+
+    66% {
+        transform: translate(-20px, 30px) rotate(-10deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+/* ========================================
+   Page 2: The Letter
+   ======================================== */
+.page-2 {
+    background: var(--gradient-2);
+}
+
+.page-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    color: var(--color-rose);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.letter-scroll-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: var(--spacing-md);
+    border-radius: 20px;
+    box-shadow: var(--shadow-card);
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    margin-bottom: var(--spacing-md);
+    border: 2px solid #fff;
+    padding-right: 15px;
+    /* Space for scrollbar */
+}
+
+/* Custom Scrollbar */
+.letter-scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.letter-scroll-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.letter-scroll-container::-webkit-scrollbar-thumb {
+    background: var(--color-rose);
+    border-radius: 4px;
+}
+
+.letter-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #ff69b4;
+}
+
+.letter-text p {
+    font-family: var(--font-handwritten);
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.signature {
+    text-align: right;
+    font-size: 1.8rem;
+    color: var(--color-rose);
+    margin-top: 2rem;
+}
+
+/* ========================================
+   Page 3: The Memories
+   ======================================== */
+.page-3 {
+    background: var(--gradient-3);
+}
+
+.memory-gallery {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto var(--spacing-md);
+    /* Center horizontally */
+}
+
+.memory-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding: 15px 15px 50px 15px;
+    border-radius: 4px;
+    box-shadow: var(--shadow-soft);
+    opacity: 0;
+    transform: translateX(100px) rotate(10deg);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.memory-card.active {
+    opacity: 1;
+    transform: translateX(0) rotate(var(--rot));
+    z-index: 5;
+    pointer-events: all;
+    box-shadow: var(--shadow-card);
+}
+
+.memory-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+    background: #eee;
+}
+
+.memory-card .caption {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    font-family: var(--font-handwritten);
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.gallery-controls {
+    display: flex;
+    gap: 20px;
+    margin-bottom: var(--spacing-md);
+    justify-content: center;
+}
+
+.gallery-btn {
+    background: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s;
+}
+
+.gallery-btn:hover {
+    transform: scale(1.1);
+}
+
+/* ========================================
+   Page 4: The Unique (Gift Box & Fireworks)
+   ======================================== */
+.page-4 {
+    background: var(--gradient-4);
+    color: #fff;
+    perspective: 1000px;
+    /* For 3D box */
+}
+
+#fireworksCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    /* Let clicks pass through to box if needed, but box has its own listener */
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* --- Gift Box Styles --- */
+.gift-box {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: var(--spacing-lg) auto;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    animation: bounceBox 2s infinite ease-in-out;
+}
+
+.gift-box:hover {
+    transform: scale(1.05);
+}
+
+.box-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.lid {
+    position: absolute;
+    top: -30px;
+    left: -10px;
+    width: 170px;
+    height: 40px;
+    background: linear-gradient(135deg, #ff8fab, #ff69b4);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    transition: all 0.5s ease;
+}
+
+/* Ribbons */
+.ribbon-vertical {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 25px;
+    height: 100%;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+.ribbon-horizontal {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background: #fff;
+    transform: translateY(-50%);
+}
+
+.ribbon-bow {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #fff 30%, transparent 30%), #fff;
+    /* Simplified CSS bow */
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Open Animation Classes */
+.gift-box.open {
+    animation: none;
+    /* Stop bouncing */
+    cursor: default;
+}
+
+.gift-box.open .lid {
+    transform: translateY(-100px) rotate(-20deg);
+    opacity: 0;
+}
+
+.gift-box.open .box-body {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.5s ease 0.2s;
+}
+
+#giftBoxContainer.hidden {
+    display: none;
+    /* Hide box after opening to show message clearly */
+}
+
+/* --- Wish Message --- */
+.wish-hidden {
+    display: none;
+    /* Initially hidden, layout-wise */
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wish-visible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    transform: scale(1);
+    z-index: 50;
+}
+
+.final-wish {
+    font-size: 2.5rem;
+    font-family: var(--font-handwritten);
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 105, 180, 1);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.final-wish-sub {
+    font-size: 1.2rem;
+    color: #ffd700;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Animations */
+@keyframes bounceBox {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ========================================
+   Navigation Controls
+   ======================================== */
+.nav-controls {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.nav-btn {
+    padding: 10px 25px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.next-btn {
+    background: var(--color-rose);
+    color: #fff;
+}
+
+.next-btn:hover {
+    background: #e0559a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.prev-btn {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #666;
+}
+
+.prev-btn:hover {
+    background: #f9f9f9;
+    border-color: #ccc;
+}
+
+.restart-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    backdrop-filter: blur(5px);
+}
+
+.restart-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Replay Button - Bottom Left Corner */
+.replay-btn-corner {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.replay-btn-corner.wish-visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.replay-btn-corner:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Music Toggle Button - Top Right Corner */
+.music-toggle {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-toggle:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.music-toggle.muted {
+    opacity: 0.6;
+}
+
+/* Footer Label */
+.footer-label {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 0.9rem;
+    font-family: var(--font-handwritten);
+    text-align: center;
+    z-index: 50;
+    pointer-events: none;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* White footer on page 4 */
+.page-4~.footer-label,
+.page-4.active~.footer-label {
+    color: rgba(255, 255, 255, 0.7);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+@media (max-width: 768px) {
+    .greeting-title {
+        font-size: 3rem;
+    }
+
+    .letter-scroll-container {
+        max-height: 50vh;
+    }
+
+    .memory-gallery {
+        width: 250px;
+        height: 350px;
+    }
+
+    .page-title {
+        font-size: 2.5rem;
+    }
+}

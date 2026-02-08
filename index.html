@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Ammu ❤️</title>
+    <meta name="description" content="A special birthday message for the most amazing person">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="card-container" id="cardContainer">
+
+        <!-- Page 1: The Greeting -->
+        <section class="card-page page-1 active" id="page1">
+            <div class="page-content">
+                <div class="floating-elements">
+                    <span class="float-item">🎈</span>
+                    <span class="float-item">✨</span>
+                    <span class="float-item">🎂</span>
+                </div>
+                <h1 class="greeting-title">
+                    Happy Birthday <br>
+                    <span class="highlight-name">Ammu ❤️</span>
+                </h1>
+                <p class="greeting-subtitle">A little something for my favorite person.</p>
+                <button class="nav-btn next-btn" onclick="nextPage()">Open Card 💌</button>
+            </div>
+        </section>
+
+        <!-- Page 2: The Letter -->
+        <section class="card-page page-2" id="page2">
+            <div class="page-content">
+                <h2 class="page-title">To My Dearest...</h2>
+                <div class="letter-scroll-container">
+                    <div class="letter-text">
+                        <p>My Dear Ammu (Monaa),</p>
+                        <p>Happy Birthday, my love ❤️</p>
+                        <p>
+                            Before anything else, I want to say I’m really sorry. I know I hurt you a few days back, and
+                            I understand why you’re angry, upset, and worried. You have every right to feel that way. I
+                            don’t blame you at all.
+                        </p>
+                        <p>
+                            I want you to know one thing clearly — I do value you. Maybe I failed to show it properly,
+                            and that’s on me. But my feelings for you are real, deep, and true. I miss you so much… I
+                            miss your voice, your laugh, and especially our long talkative sessions. My days feel
+                            incomplete without them.
+                        </p>
+                        <p>
+                            If you ever felt that you were not important to me, I’m truly sorry for making you feel that
+                            way. You are important. You are special. You matter to me more than you know.
+                            It is my duty to make you smile again, and I will try my best — patiently, honestly, and
+                            with love.
+                        </p>
+                        <p>
+                            I always wanted to be a good dad to you, a best friend to you, and a good charm in your
+                            life. I may not be perfect, but my intentions have always been pure.
+                        </p>
+                        <p>
+                            For me, “aval podhum” — you alone are enough.
+                            You are the only person I want to argue with, sleep next to, laugh with, and annoy for the
+                            rest of my life. No one else.
+                        </p>
+                        <p>
+                            On your birthday, I just want you to know how much I miss you and how much I love you.
+                            Please hold me tight when you’re ready. I’m right here… waiting, hoping, and loving you.
+                        </p>
+                        <p class="signature">Always yours,<br>Ammu’s ❤️</p>
+                    </div>
+                </div>
+                <div class="nav-controls">
+                    <button class="nav-btn prev-btn" onclick="prevPage()">⬅️ Back</button>
+                    <button class="nav-btn next-btn" onclick="nextPage()">See Memories 📸</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 3: The Memories -->
+        <section class="card-page page-3" id="page3">
+            <div class="page-content">
+                <h2 class="page-title">Our Moments 📸</h2>
+
+                <div class="memory-gallery"
+                    style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                    <div class="memory-card active" style="--rot: -2deg">
+                        <img src="memory1.jpg" alt="Memory 1">
+                        <p class="caption">The Beginning of Us 💖</p>
+                    </div>
+                    <div class="memory-card" style="--rot: 2deg">
+                        <img src="memory2.jpg" alt="Memory 2">
+                        <p class="caption">Side by Side, Always 👫</p>
+                    </div>
+                    <div class="memory-card" style="--rot: -1deg">
+                        <img src="memory3.jpg" alt="Memory 3">
+                        <p class="caption">That Beautiful Smile 🥰</p>
+                    </div>
+                    <div class="memory-card" style="--rot: 3deg">
+                        <img src="memory4.jpg" alt="Memory 4">
+                        <p class="caption">Adventures Together 🌍</p>
+                    </div>
+                    <div class="memory-card" style="--rot: -3deg">
+                        <img src="memory5.jpg" alt="Memory 5">
+                        <p class="caption">In Your Element ✨</p>
+                    </div>
+                    <div class="memory-card" style="--rot: 2deg">
+                        <img src="memory6.jpg" alt="Memory 6">
+                        <p class="caption">Sweetest Moments 🍬</p>
+                    </div>
+                    <div class="memory-card" style="--rot: -2deg">
+                        <img src="memory7.jpg" alt="Memory 7">
+                        <p class="caption">Pure Happiness 💖</p>
+                    </div>
+                    <div class="memory-card" style="--rot: 1deg">
+                        <img src="memory8.jpg" alt="Memory 8">
+                        <p class="caption">Infinite Love ♾️</p>
+                    </div>
+                    <div class="memory-card" style="--rot: -1deg">
+                        <img src="memory9.jpg" alt="Memory 9">
+                        <p class="caption">Sunny Days with You ☀️</p>
+                    </div>
+                    <div class="memory-card" style="--rot: 3deg">
+                        <img src="memory10.jpg" alt="Memory 10">
+                        <p class="caption">Unforgettable Times 💫</p>
+                    </div>
+                    <div class="memory-card" style="--rot: -2deg">
+                        <img src="memory11.jpg" alt="Memory 11">
+                        <p class="caption">You Mean Everything 🌹</p>
+                    </div>
+                </div>
+
+                <div class="gallery-controls">
+                    <button class="gallery-btn" onclick="prevMemory()">❮</button>
+                    <button class="gallery-btn" onclick="nextMemory()">❯</button>
+                </div>
+
+                <div class="nav-controls">
+                    <button class="nav-btn prev-btn" onclick="prevPage()">⬅️ Letter</button>
+                    <button class="nav-btn next-btn" onclick="nextPage()">Make a Wish ✨</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page 4: The Unique (Fireworks) -->
+        <section class="card-page page-4" id="page4">
+            <canvas id="fireworksCanvas"></canvas>
+            <div class="page-content overlay-content">
+
+                <!-- Gift Box Container -->
+                <div id="giftBoxContainer">
+                    <h2 class="page-title glow-text">A Surprise for You... 🎁</h2>
+                    <div class="gift-box" onclick="openGift()">
+                        <div class="lid">
+                            <div class="ribbon-bow"></div>
+                        </div>
+                        <div class="box-body">
+                            <div class="ribbon-vertical"></div>
+                            <div class="ribbon-horizontal"></div>
+                        </div>
+                    </div>
+                    <p class="instruction-text">Tap the box to open!</p>
+                </div>
+
+                <!-- Hidden Wish Message (Appears after box opens) -->
+                <div id="wishMessage" class="wish-hidden">
+                    <h2 class="final-wish">May all your dreams come true, Ammu! 💖</h2>
+                    <p class="final-wish-sub">You are my greatest gift. ✨</p>
+                </div>
+
+                <!-- Replay Button (Bottom-left corner) -->
+                <button class="replay-btn-corner wish-hidden" id="replayBtn" onclick="location.reload()">↺
+                    Replay</button>
+
+                <div class="nav-controls">
+                    <button class="nav-btn prev-btn" onclick="prevPage()">⬅️ Memories</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="Dude-Orchestral-Suite-MassTamilan.dev.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Toggle Button (Top-right corner) -->
+    <button id="musicToggle" class="music-toggle" onclick="toggleMusic()">
+        🔊
+    </button>
+
+    <!-- Footer Label -->
+    <div class="footer-label">
+        Made with a stupid amount of love ❤️
+    </div>
+
+    <script>
+        /* ========================================
+   Logic for 4-Page Birthday Card
+   ======================================== */
+
+        // --- Variables ---
+        let currentPage = 1;
+        const totalPages = 4;
+        const musicToggle = document.getElementById('musicToggle');
+        const bgMusic = document.getElementById('bgMusic');
+        let isMusicPlaying = false;
+
+        // --- Music Control ---
+        function toggleMusic() {
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                musicToggle.textContent = '🔇';
+                musicToggle.classList.add('muted');
+                isMusicPlaying = false;
+            } else {
+                bgMusic.play().catch(e => console.log('Audio play failed:', e));
+                musicToggle.textContent = '🔊';
+                musicToggle.classList.remove('muted');
+                isMusicPlaying = true;
+            }
+        }
+
+        // Auto-play music on first user interaction (due to browser autoplay policies)
+        document.addEventListener('click', function playOnFirstClick() {
+            if (!isMusicPlaying) {
+                bgMusic.play().catch(e => console.log('Audio play failed:', e));
+                musicToggle.textContent = '🔊';
+                isMusicPlaying = true;
+            }
+            // Remove listener after first click
+            document.removeEventListener('click', playOnFirstClick);
+        }, { once: true });
+
+        // --- Navigation ---
+        // --- Navigation ---
+        function nextPage() {
+            if (currentPage < totalPages) {
+                const currentSection = document.getElementById(`page${currentPage}`);
+                currentSection.classList.add('flipped');
+                currentPage++;
+                updateZIndex();
+            }
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                const prevSection = document.getElementById(`page${currentPage}`);
+                prevSection.classList.remove('flipped');
+                updateZIndex();
+            }
+        }
+
+        // Helper to ensure correct stacking during flips
+        function updateZIndex() {
+            // No custom Z-index logic needed if CSS is set correctly, 
+            // but we can enforce focus if needed.
+            // The CSS .page-X z-indices handle the stacking order.
+        }
+
+
+        // --- Page 3: Memory Gallery ---
+        let currentMemory = 0;
+        const memories = document.querySelectorAll('.memory-card');
+
+        function nextMemory() {
+            memories[currentMemory].classList.remove('active');
+            currentMemory = (currentMemory + 1) % memories.length;
+            memories[currentMemory].classList.add('active');
+        }
+
+        function prevMemory() {
+            memories[currentMemory].classList.remove('active');
+            currentMemory = (currentMemory - 1 + memories.length) % memories.length;
+            memories[currentMemory].classList.add('active');
+        }
+
+        // Auto-rotate memories every 4 seconds
+        setInterval(nextMemory, 4000);
+
+
+        // --- Page 4: Fireworks & Interaction ---
+        const canvas = document.getElementById('fireworksCanvas');
+        const ctx = canvas.getContext('2d');
+        let fireworks = [];
+        let particles = [];
+        let wishRevealed = false;
+
+        // Resize canvas
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas(); // Initial resize
+
+
+        /* ========================================
+           Gift Box & Fireworks Logic
+           ======================================== */
+        function openGift() {
+            const giftBox = document.querySelector('.gift-box');
+            const giftBoxContainer = document.getElementById('giftBoxContainer');
+            const wishMessage = document.getElementById('wishMessage');
+            const replayBtn = document.getElementById('replayBtn');
+
+            // 1. Animate Box Opening
+            giftBox.classList.add('open');
+
+            // 2. Launch Fireworks Explosion from Center
+            // Launch a few initial big ones
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    launchAutoFirework();
+                }, i * 300);
+            }
+
+            // 3. Hide Box & Show Message after delay
+            setTimeout(() => {
+                giftBoxContainer.classList.add('hidden');
+                wishMessage.style.display = 'flex'; // Ensure it's part of layout
+
+                // Small delay to allow display:flex to apply before opacity transition
+                requestAnimationFrame(() => {
+                    wishMessage.classList.remove('wish-hidden');
+                    wishMessage.classList.add('wish-visible');
+
+                    // Show replay button
+                    replayBtn.classList.remove('wish-hidden');
+                    replayBtn.classList.add('wish-visible');
+                });
+
+                // Start continuous fireworks
+                startFireworksLoop();
+            }, 1000);
+        }
+
+        function launchAutoFirework() {
+            const x = Math.random() * canvas.width;
+            const y = canvas.height;
+            const targetX = x; // For auto-fireworks, targetX is usually the same as startX
+            const targetY = canvas.height * (0.2 + Math.random() * 0.5);
+            const color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+
+            fireworks.push(new Firework(x, y, targetX, targetY, color));
+        }
+
+        function startFireworksLoop() {
+            setInterval(() => {
+                if (Math.random() < 0.3) { // 30% chance every check
+                    launchAutoFirework();
+                }
+            }, 800);
+        }
+
+        /* --- Canvas Click Listener --- */
+        // Only launch fireworks on click if the wish message is visible (post-gift opening)
+        canvas.addEventListener('click', (e) => {
+            const wishMessage = document.getElementById('wishMessage');
+            if (wishMessage.classList.contains('wish-visible')) {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = canvas.height;
+                const targetX = e.clientX - rect.left; // Target X is where the click happened
+                const targetY = e.clientY - rect.top; // Target Y is where the click happened
+                const color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                fireworks.push(new Firework(x, y, targetX, targetY, color));
+            }
+        });
+
+        /* --- Firework & Particle Classes --- */
+        class Firework {
+            constructor(x, y, targetX, targetY, color) {
+                this.x = x;
+                this.y = y;
+                this.targetX = targetX;
+                this.targetY = targetY;
+                this.color = color;
+                this.speed = 3;
+                this.angle = Math.atan2(targetY - y, targetX - x);
+                this.velocity = {
+                    x: Math.cos(this.angle) * this.speed,
+                    y: Math.sin(this.angle) * this.speed
+                };
+                this.particles = [];
+                this.exploded = false;
+            }
+
+            update() {
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+
+                // Check if reached target (approximate)
+                const dist = Math.hypot(this.x - this.targetX, this.y - this.targetY);
+                if (dist < 5 && !this.exploded) {
+                    this.explode();
+                } else if (this.y < this.targetY && this.velocity.y < 0 && !this.exploded) {
+                    // Backup check: if it overshoot up
+                    this.explode();
+                }
+
+                if (this.exploded) {
+                    this.particles.forEach((p, index) => {
+                        p.update();
+                        if (p.alpha <= 0) this.particles.splice(index, 1);
+                    });
+                }
+            }
+
+            draw() {
+                if (!this.exploded) {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+                }
+                this.particles.forEach(p => p.draw());
+            }
+
+            explode() {
+                this.exploded = true;
+                for (let i = 0; i < 50; i++) {
+                    this.particles.push(new Particle(this.x, this.y, this.color));
+                }
+            }
+        }
+
+        class Particle {
+            constructor(x, y, color) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.velocity = {
+                    x: (Math.random() - 0.5) * 6,
+                    y: (Math.random() - 0.5) * 6
+                };
+                this.alpha = 1;
+                this.friction = 0.95;
+                this.gravity = 0.05;
+            }
+
+            update() {
+                this.velocity.x *= this.friction;
+                this.velocity.y *= this.friction;
+                this.velocity.y += this.gravity;
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+                this.alpha -= 0.01;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.alpha;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        // Main animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.fillStyle = 'rgba(26, 26, 46, 0.2)'; // Trail effect
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            fireworks.forEach((fw, index) => {
+                fw.update();
+                fw.draw();
+                if (fw.exploded && fw.particles.length === 0) {
+                    fireworks.splice(index, 1);
+                }
+            });
+
+            // Also animate independent particles if any
+            particles.forEach((p, index) => {
+                p.update();
+                p.draw();
+                if (p.alpha <= 0) particles.splice(index, 1);
+            });
+        }
+
+        // Start animation
+        animate();
+    </script>
+</body>
+
+</html>
